@@ -17,15 +17,19 @@ This roulette wil have the numbers from 0 to 36
 You can chosse between betting in a single number or in the colors RED, GREEN and BLACK 
     """)
 
-
     while True:
-        try: 
-            bet = int(input('type how much you wanna bet:'))
-            if bet > curency:
-                print("You do not have that amount of money, you cant bet more than you put")
-            else:   
-                break
-        except ValueError: print('invalid number, try again')
+        bet = input()
+        if bet == 'all in':
+            bet = curency
+            break
+        else:
+            try:
+                 bet = int(bet)
+                 break
+            except ValueError:
+                print("Invalid bet, try again")
+
+
     
     
     curency -= bet
@@ -50,4 +54,5 @@ You can chosse between betting in a single number or in the colors RED, GREEN an
         print("OH NO! YOU JUST LOST THE BET :(((")
         print(f"AND WITH THAT LOSS, YOU JUST LOST {bet} DOLARS")
         print("YOU CANT JUST LET IT END LIKE THIS, IN THE LOSS")
+    input()
     return curency
