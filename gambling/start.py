@@ -12,7 +12,7 @@ def clear_screen():
 def my_games_chosser():
     global money
     print('which shall you play?')
-    possible_games = ['classic roulet']
+    possible_games = ['classic roulet','quit']
     for i in possible_games: print(i)
     game_chose = input()
     while game_chose not in possible_games:
@@ -21,6 +21,8 @@ def my_games_chosser():
 
     if game_chose == 'classic roulet':
         money = classic_roulet(money)
+    if game_chose == 'quit':
+        pass
 
 
 
@@ -41,9 +43,11 @@ how much saw you wage?""")
 Now, excited to play some of my games?
     """)
     input()
-    clear_screen()
-    my_games_chosser()
 
 
 
 cassino_opener()
+while True:
+    clear_screen()
+    print(f"You currently have {money} credits")
+    my_games_chosser()
